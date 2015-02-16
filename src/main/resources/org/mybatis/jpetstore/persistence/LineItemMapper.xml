@@ -4,7 +4,7 @@
 
 <mapper namespace="org.mybatis.jpetstore.persistence.LineItemMapper">
 
-  <cache />
+  <cache type="com.skplanet.plandas.mybatis.MybatisRedisCache"/>
 
   <select id="getLineItemsByOrderId" parameterType="int" resultType="LineItem">
     SELECT

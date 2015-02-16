@@ -4,18 +4,18 @@
 
 <mapper namespace="org.mybatis.jpetstore.persistence.SequenceMapper">
 
-  <cache />
+	<cache type="com.skplanet.plandas.mybatis.MybatisRedisCache" />
 
-  <select id="getSequence" parameterType="Sequence" resultType="Sequence">
-    SELECT name, nextid
-    FROM SEQUENCE
-    WHERE NAME = #{name}
-  </select>
+	<select id="getSequence" parameterType="Sequence" resultType="Sequence">
+		SELECT name, nextid
+		FROM SEQUENCE
+		WHERE NAME = #{name}
+	</select>
 
-  <update id="updateSequence" parameterType="Sequence">
-    UPDATE SEQUENCE
-    SET NEXTID = #{nextId}
-    WHERE NAME = #{name}
-  </update>
+	<update id="updateSequence" parameterType="Sequence">
+		UPDATE SEQUENCE
+		SET NEXTID = #{nextId}
+		WHERE NAME = #{name}
+	</update>
 
 </mapper>
